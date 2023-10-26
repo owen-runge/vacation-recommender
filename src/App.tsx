@@ -1,14 +1,11 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import SurveyComponent from './Survey';
+import routes from './routes';
+import { useRoutes } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <SurveyComponent/>
-    </div>
-  );
-}
+const App = () => {
+  const content = useRoutes(routes);
+  return content;
+};
 
 export default App;

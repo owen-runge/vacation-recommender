@@ -2,10 +2,9 @@ export const json = {
  "focusFirstQuestionAutomatic": false,
 "elements": [
 {
-    "type": "checkbox",
+    "type": "radiogroup",
     "name": "climate-choices",
-    "title": "Please choose your preferred climate(s) for your vacation destination.",
-    "description": "select all that apply",
+    "title": "Please choose your preferred climate for your vacation destination.",
     "isRequired": true,
     "requiredErrorText": "This question is required.",
     "choices": [
@@ -17,24 +16,6 @@ export const json = {
     ],
     "showNoneItem": true,
     "noneText": "No Preference",
-    "maxSelectedChoices": 5,
-    "minSelectedChoices": 1
-},
-{
-    "type": "ranking",
-    "name": "climate-ranking",
-    "visibleIf": "{climate-choices} anyof ['Hot', 'Warm', 'Temperate', 'Cool', 'Cold']",
-    "title": "Please rank your preferred climates from your answer(s) to the last question.",
-    "isRequired": true,
-    "requiredIf": "{climate-choices} anyof ['Cold', 'Cool', 'Temperate', 'Warm', 'Hot']",
-    "requiredErrorText": "This question is required.",
-    "choicesFromQuestion": "climate-choices",
-    "choices": [
-    "Item 1",
-    "Item 2",
-    "Item 3"
-    ],
-    "choicesFromQuestionMode": "selected"
 },
 {
     "type": "radiogroup",
@@ -50,30 +31,17 @@ export const json = {
     "noneText": "No Preference"
 },
 {
-    "type": "checkbox",
+    "type": "radiogroup",
     "name": "time-of-year",
-    "title": "During which month(s) do you plan on vacationing?",
-    "description": "select all that apply",
+    "title": "During which season do you plan on vacationing?",
     "isRequired": true,
     "requiredErrorText": "This question is required.",
     "choices": [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
+    "Spring",
+    "Summer",
+    "Fall",
+    "Winter"
     ],
-    "colCount": 2,
-    "showSelectAllItem": true,
-    "maxSelectedChoices": 12,
-    "minSelectedChoices": 1
 },
 {
     "type": "checkbox",
@@ -122,18 +90,22 @@ export const json = {
     "maxRateDescription": "Very Large"
 },
 {
-    "type": "boolean",
-    "name": "has-kids",
-    "title": "Will you be bringing children under the age of 12 with you?",
+    "type": "rating",
+    "name": "kids-attraction-importance",
+    "title": "How important is the availability of attractions suitable for kids?",
     "isRequired": true,
-    "requiredErrorText": "This question is required."
+    "requiredErrorText": "This question is required.",
+    "minRateDescription": "Not at all",
+    "maxRateDescription": "Very Important"
 },
 {
-    "type": "boolean",
-    "name": "adrenaline-seeking",
-    "title": "Will you be wanting to do adrenaline-seeking activities?",
+    "type": "rating",
+    "name": "adrenaline-attraction-importance",
+    "title": "How important is the availability of high-adrenaline attractions?",
     "isRequired": true,
-    "requiredErrorText": "This question is required."
+    "requiredErrorText": "This question is required.",
+    "minRateDescription": "Not at all",
+    "maxRateDescription": "Very Important"
 },
 {
     "type": "checkbox",
@@ -184,7 +156,7 @@ export const json = {
     ],
     "noneText": "No Preference",
     "colCount": 2,
-    "maxSelectedChoices": 9,
+    "maxSelectedChoices": 11,
     "minSelectedChoices": 1
 },
 {
@@ -407,22 +379,6 @@ export const json = {
     "maxSelectedChoices": 5,
     "minSelectedChoices": 1,
     "closeOnSelect": true
-},
-{
-    "type": "ranking",
-    "name": "cuisine-ranking",
-    "visibleIf": "{cuisine-choices} notempty",
-    "title": "Please rank your favorite cuisines from your answer(s) to the last question.",
-    "isRequired": true,
-    "requiredIf": "{cuisine-choices} notempty",
-    "requiredErrorText": "This question is required.",
-    "choicesFromQuestion": "cuisine-choices",
-    "choices": [
-    "Item 1",
-    "Item 2",
-    "Item 3"
-    ],
-    "choicesFromQuestionMode": "selected"
 },
 {
     "type": "rating",
