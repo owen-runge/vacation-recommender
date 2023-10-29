@@ -129,8 +129,8 @@ def model_output():
         answer_city = str(cities_data_df['City'].values[val])
         city_output.append(str(answer_city))
     
-    #subporcess return stuff
-    json_object_result = json.dumps(city_output, indent=4)
+    #subprocess return stuff
+    json_object_result = json.dumps(city_output, indent=3)
     with open(sys.argv[3], "w") as outfile:
         outfile.write(json_object_result)
 

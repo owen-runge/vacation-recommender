@@ -5,11 +5,6 @@ import "survey-core/defaultV2.min.css";
 import * as SurveyTheme from "survey-core/themes";
 import "../index.css";
 import { json } from "./json";
-//import { saveAs } from 'file-saver';
-//import * as jsonfile from 'jsonfile';
-//import * as fs from 'fs';
-import { spawnSync } from 'child_process';
-import { readFile } from 'jsonfile';
 import { useCallback } from "react";
 
 function SurveyComponent() {
@@ -17,69 +12,39 @@ function SurveyComponent() {
     survey.applyTheme(SurveyTheme.SharpDark);
     const surveyComplete = useCallback((sender: any) => {
         handleSurveyResults(
+            'http://127.0.0.1:8000/post/',
             sender.data
         )
     }, []);
 
     survey.onComplete.add(surveyComplete);
-    // survey.onComplete.add(async (sender, options) => {
-    //     console.log(JSON.stringify(sender.data, null, 3));
-    //     // const path = './surveyResults.json';
-    //     // fs.writeFile(path, JSON.stringify(sender.data, null, 3), (error: any) => {
-    //     //     if (error) {
-    //     //         console.log('An error has occured', error);
-    //     //         return;
-    //     //     }
-    //     //     console.log('data successfully written to file.');
-    //     // });
-    //     const pythonProcess = await spawnSync('python3', [
-    //         '../scripts/PYTHONFILENAME.py',
-    //         'FUNCTIONNAME',
-    //         JSON.stringify(sender.data),
-    //         '../scripts/modelResults.json'
-    //     ]);
-    //     const result = pythonProcess.stdout?.toString()?.trim();
-    //     const error = pythonProcess.stderr?.toString()?.trim();
 
-    //     const status = result === 'OK';
-    //     if (status) {
-    //         const buffer = await readFile('../scripts/modelResults.json');
-    //         const resultParsed = JSON.parse(buffer?.toString());
-    //         console.log(resultParsed);
-    //     } else {
-    //         console.log(error);
-    //     }
-    // });
     return (<Survey model={survey} />);
 }
 
-async function handleSurveyResults(json: any) {
-    console.log(JSON.stringify(json, null, 3));
-        // const path = './surveyResults.json';
-        // fs.writeFile(path, JSON.stringify(sender.data, null, 3), (error: any) => {
-        //     if (error) {
-        //         console.log('An error has occured', error);
-        //         return;
-        //     }
-        //     console.log('data successfully written to file.');
-        // });
-        const pythonProcess = await spawnSync('python3', [
-            '../scripts/test.py',
-            'model_output',
-            JSON.stringify(json),
-            '../scripts/modelResults.json'
-        ]);
-        const result = pythonProcess.stdout?.toString()?.trim();
-        const error = pythonProcess.stderr?.toString()?.trim();
 
-        const status = result === 'OK';
-        if (status) {
-            const buffer = await readFile('../scripts/modelResults.json');
-            const resultParsed = JSON.parse(buffer?.toString());
-            console.log(resultParsed);
+async function handleSurveyResults(url: string, json: any) {
+    console.log(JSON.stringify(json, null, 3));
+    await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json;charset=UTF-8'
+        },
+        body: JSON.stringify(json)
+      })
+      .then(response => {
+        if (response.ok) {
+          response.json().then(data => {
+            localStorage.setItem("cities",JSON.stringify(data));
+            console.log(JSON.parse(localStorage.getItem("cities") || '{}'));
+          })
         } else {
-            console.log(error);
+          console.log('error from backend.');
         }
-}
+      })
+      .catch(error => {
+        console.log('error fetching data');
+      });
+};
 
 export default SurveyComponent;

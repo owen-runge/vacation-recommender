@@ -399,6 +399,7 @@ export const json = {
     "maxRateDescription": "Very Concerned"
 }
 ],
+"navigateToUrl": "/results",
 "showQuestionNumbers": "off",
 "widthMode": "static",
 "width": "750px"
