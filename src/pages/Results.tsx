@@ -21,11 +21,11 @@ import React from 'react';
 
 function Render () {
     const cities_response = JSON.parse(JSON.parse(localStorage.getItem("cities") || '{}'));
-    const cities_list_items = cities_response.map((c: string) => <li key={c}>{c}</li>);
+    const cities_list_items = cities_response.map((c: string) => <li key={c} className='text-white'>{c}</li>);
 
     return(
         <div>
-            <ul>
+            <ul className='pl-4 space-y-0.5'>
                 {cities_list_items}
             </ul>
         </div>
@@ -34,8 +34,8 @@ function Render () {
 
 const Results = () => {
     return (
-        <div>
-            <h1>Top 5 cities</h1>
+        <div className='bg-dark h-screen'>
+            <h1 className='text-white font-bold p-3'>Top 5 cities</h1>
             <Render/>
         </div>
     );
