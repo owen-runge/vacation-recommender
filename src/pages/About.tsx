@@ -29,7 +29,7 @@ const About = () => {
             <img src={DrakeHeadshot} alt="Drake Hayes" style={imageStyle} height='100' width='185' />
             <p className='text-inherit pl-2.5 pt-1'>
                 Drake Hayes is a senior at Wabash College majoring
-                in math and computer science and minoring in religion.
+                in Math and Computer Science and minoring in Religion.
                 In his free time, he enjoys playing video
                 games
                 and spending time with family.  Feel free to connect
@@ -39,7 +39,7 @@ const About = () => {
             <img src={OwenHeadshot} alt="OwenRunge" style={imageStyle} height='100' width='185' />
             <p className='text-inherit pl-2.5 pt-1'>
                 Owen Runge is a senior at Wabash College majoring
-                in German and computer science.
+                in German and Computer Science.
                 In his free time, he enjoys cooking, playing soccer, and
                 studying geography.  Feel free to connect
                 with him on LinkedIn at www.linkedin.com/in/owenrunge/.</p>
@@ -48,8 +48,8 @@ const About = () => {
             <img src={BigFHeadshot} alt="Fardin" style={imageStyle} height='100' width='185' />
             <p className='text-inherit pl-2.5 pt-1'>
                 Fardin is a senior at Wabash College majoring
-                in physics and computer science and minoring in math
-                and history.
+                in Physics and Computer Science and minoring in Math
+                and History.
                 In his free time, he enjoys playing soccer, reading comics,
                 and visiting museums.  Feel free to connect
                 with him on LinkedIn at www.linkedin.com/in/kazi-fardinul-hoque/.</p>
