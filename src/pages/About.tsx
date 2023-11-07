@@ -42,7 +42,7 @@ const About = () => {
                 in German and computer science.
                 In his free time, he enjoys cooking, playing soccer, and
                 studying geography.  Feel free to connect
-                with him on LinkedIn at www.linkedin.com/in/owenrunge/</p>
+                with him on LinkedIn at www.linkedin.com/in/owenrunge/.</p>
           </div>
           <div>
             <img src={BigFHeadshot} alt="Fardin" style={imageStyle} height='100' width='185' />
@@ -51,7 +51,7 @@ const About = () => {
                 in physics and computer science and minoring in math
                 and history.
                 In his free time, he enjoys playing soccer, reading comics,
-                and visiting muse- ums.  Feel free to connect
+                and visiting museums.  Feel free to connect
                 with him on LinkedIn at www.linkedin.com/in/kazi-fardinul-hoque/.</p>
           </div>
         </div>
