@@ -23,7 +23,7 @@ const About = () => {
   
     return (
       <div className='bg-dark text-white text-sm font-jetbrainsmono min-h-screen max-h-full'>
-        <h1 className='text-inherit text-5xl font-bold py-10 px-5'>About Us</h1>
+        <h1 className='text-inherit text-5xl font-bold py-10 px-5'>About</h1>
         <div className='bg-custom-foreground p-4  mx-5 border-2 rounded border-custom-border'>
           <h1 className='text-inherit text-3xl'>The Group Members</h1>
           <div className='flex flex-row justify-center align-center'>

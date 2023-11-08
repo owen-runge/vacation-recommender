@@ -21,8 +21,8 @@ const Home = () => {
             <h1 className='text-inherit text-5xl font-jetbrainsmono font-bold px-5 py-10'>Welcome to Vacation Recommender!</h1>
             <div className='px-5'>
                 <p className='text-inherit text-xl font-jetbrainsmono'>Vacation Recommender is an all-in-one tool to find the vacation destination of your dreams.</p>
-                <p className='text-inherit text-base font-jetbrainsmono py-2'>Simply take the survey on the following criteria to find the cities<sup>*</sup> that best fit your wants</p>
-                <ul className='text-inherit text-base font-jetbrainsmono list-disc list-outside hover:list-inside px-8 space-y-1'>
+                <p className='text-inherit text-base font-jetbrainsmono pt-2'>Simply take the survey on the following criteria to find the cities<sup>*</sup> that best fit your wants</p>
+                <ul className='text-inherit text-base font-jetbrainsmono list-disc list-inside px-8 space-y-1'>
                     <li>climate</li>
                     <li>transportation</li>
                     <li>dining</li>
