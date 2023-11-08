@@ -34,7 +34,7 @@ export default function Navbar() {
               <MDBNavbarLink className='font-jetbrainsmono' href='/survey'>Survey</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink className='font-jetbrainsmono' href='/about'>About Us</MDBNavbarLink>
+              <MDBNavbarLink className='font-jetbrainsmono' href='/about'>About</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink className='font-jetbrainsmono' href='/contact'>
