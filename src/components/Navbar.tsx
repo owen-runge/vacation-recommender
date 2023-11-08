@@ -17,7 +17,7 @@ export default function Navbar() {
   return (
     <MDBNavbar expand='lg' dark bgColor='info'>
       <MDBContainer fluid>
-        <MDBNavbarBrand href='/'>Vacation Recommender</MDBNavbarBrand>
+        <MDBNavbarBrand className='font-jetbrainsmono text-3xl' href='/'>Vacation Recommender</MDBNavbarBrand>
         <MDBNavbarToggler
           type='button'
           data-target='#navbarColor02'
@@ -31,13 +31,13 @@ export default function Navbar() {
         <MDBCollapse navbar show={showNav}>
           <MDBNavbarNav>
             <MDBNavbarItem>
-              <MDBNavbarLink href='/survey'>Survey</MDBNavbarLink>
+              <MDBNavbarLink className='font-jetbrainsmono' href='/survey'>Survey</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='/about'>About Us</MDBNavbarLink>
+              <MDBNavbarLink className='font-jetbrainsmono' href='/about'>About Us</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
-              <MDBNavbarLink href='/contact'>
+              <MDBNavbarLink className='font-jetbrainsmono' href='/contact'>
                 Contact
               </MDBNavbarLink>
             </MDBNavbarItem>
