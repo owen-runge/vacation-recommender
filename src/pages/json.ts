@@ -116,41 +116,47 @@ export const json = {
     "requiredErrorText": "This question is required.",
     "choices": [
     {
-    "value": "Spas-Wellness",
+    "value": "spas_wellness",
     "text": "Spas & Wellness"
     },
     {
-    "value": "Sights-Landmarks",
+    "value": "sights_landmarks",
     "text": "Sights & Landmarks"
     },
-    "Nightlife",
     {
-    "value": "Fun-Games",
+    "value": "nightlife",
+    "text": "Nightlife"
+    },
+    {
+    "value": "fun_games",
     "text": "Fun & Games"
     },
     {
-    "value": "Nature-Parks",
+    "value": "nature_parks",
     "text": "Nature & Parks"
     },
-    "Museums",
     {
-    "value": "Classes-Workshops",
+    "value": "museums",
+    "text": "Museums"
+    },
+    {
+    "value": "classes_workshops",
     "text": "Classes & Workshops"
     },
     {
-    "value": "BoatTours-WaterSports",
+    "value": "boat_tours_water_sports",
     "text": "Boat Tours & Water Sports"
     },
     {
-    "value": "Zoos-Aquariums",
+    "value": "zoos_aquariums",
     "text": "Zoos & Aquariums"
     },
     {
-    "value": "Water-AmusementParks",
+    "value": "water_amusement_parks",
     "text": "Water & Amusement Parks"
     },
     {
-    "value": "Casinos-Gambling",
+    "value": "casinos_gambling",
     "text": "Casinos & Gambling"
     }
     ],
@@ -200,47 +206,31 @@ export const json = {
     "Armenian",
     "Asian",
     "Australian",
+    "Balti",
     "Bangladeshi",
     "Bar",
     "Barbecue",
     "Basque",
-    {
-    "value": "Beer-restaurants",
-    "text": "Beer restaurants"
-    },
+    "Beer restaurants",
     "Belgian",
     "Brazilian",
-    {
-    "value": "Brew-Pub",
-    "text": "Brew Pub"
-    },
+    "Brew Pub",
     "British",
     "Burmese",
     "Cafe",
-    {
-    "value": "Cajun-Creole",
-    "text": "Cajun & Creole"
-    },
+    "Cajun & Creole",
     "Campania",
     "Canadian",
     "Cantonese",
     "Caribbean",
     "Caucasian",
-    {
-    "value": "Central-American",
-    "text": "Central American"
-    },
-    {
-    "value": "Central-Asian",
-    "text": "Central Asian"
-    },
-    {
-    "value": "Central-European",
-    "text": "Central European"
-    },
+    "Central American",
+    "Central Asian",
+    "Central European",
     "Central-Italian",
     "Chilean",
     "Chinese",
+    "Coffee & Tea",
     "Columbian",
     "Contemporary",
     "Cuban",
@@ -248,21 +238,12 @@ export const json = {
     "Danish",
     "Deli",
     "Diner",
-    {
-    "value": "Dining-Bars",
-    "text": "Dining Bars"
-    },
-    {
-    "value": "Eastern-European",
-    "text": "Eastern European"
-    },
+    "Dining Bars",
+    "Eastern European",
     "Ecuadorian",
     "Ethiopian",
     "European",
-    {
-    "value": "Fast-Food",
-    "text": "Fast Food"
-    },
+    "Fast Food",
     "Filipino",
     "French",
     "Fujian",
@@ -275,10 +256,7 @@ export const json = {
     "Guatemalan",
     "Hawaiian",
     "Healthy",
-    {
-    "value": "Hong-Kong",
-    "text": "Hong Kong"
-    },
+    "Hong Kong",
     "Hungarian",
     "Indian",
     "Indonesian",
@@ -288,34 +266,19 @@ export const json = {
     "Italian",
     "Jamaican",
     "Japanese",
-    {
-    "value": "Japanese-Fusion",
-    "text": "Japanese Fusion"
-    },
-    {
-    "value": "Japanese-Sweets-Parlour",
-    "text": "Japanese Sweets Parlour"
-    },
+    "Japanese Fusion",
+    "Japanese Sweets Parlour",
     "Kaiseki",
     "Korean",
-    {
-    "value": "Kyushu-Cuisine",
-    "text": "Kyushu Cuisine"
-    },
+    "Kyushu Cuisine",
     "Latin",
     "Lazio",
     "Lebanese",
     "Malaysian",
-    {
-    "value": "Medicinal-Foods",
-    "text": "Medicinal Foods"
-    },
+    "Medicinal Foods",
     "Mediterranean",
     "Mexican",
-    {
-    "value": "Middle-Eastern",
-    "text": "Middle Eastern"
-    },
+    "Middle Eastern",
     "Mongolian",
     "Moroccan",
     "Neapolitan",
@@ -330,10 +293,8 @@ export const json = {
     "Polynesian",
     "Portuguese",
     "Pub",
-    {
-    "value": "Puerto-Rican",
-    "text": "Puerto Rican"
-    },
+    "Puerto Rican",
+    "Quick Bites",
     "Romana",
     "Romanian",
     "Russian",
@@ -344,17 +305,11 @@ export const json = {
     "Shanghai",
     "Singaporean",
     "Soups",
-    {
-    "value": "South-American",
-    "text": "South American"
-    },
+    "South American",
     "Southern-Italian",
     "Southwestern",
     "Spanish",
-    {
-    "value": "Sri-Lankan",
-    "text": "Sri Lankan"
-    },
+    "Sri Lankan",
     "Steakhouse",
     "Streetfood",
     "Sushi",
@@ -369,10 +324,7 @@ export const json = {
     "Ukrainian",
     "Uzbek",
     "Vietnamese",
-    {
-    "value": "Wine-Bar",
-    "text": "Wine Bar"
-    },
+    "Wine Bar",
     "Xinjiang"
     ],
     "colCount": 3,
