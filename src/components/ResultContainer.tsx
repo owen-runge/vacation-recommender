@@ -1,10 +1,16 @@
 import React from 'react';
 
+// interface for ResultContainer props
+interface cityInfo {
+    cityName: string;       // name of city is a string
+    bullets: string[];      // bullets for city is an array of strings
+}
+
 // container that formats each city on the results page
 // props:
 // - cityName: name of the city
 // - bullets: the relevant bullet points for each city
-function ResultContainer (props: any) {
+function ResultContainer (props:cityInfo) {
     const cityName = props.cityName;
     const cityBullets = props.bullets.map((c: string) => <li key={c} className='text-white'>{c}</li>);
 
