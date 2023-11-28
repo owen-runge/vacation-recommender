@@ -1,27 +1,69 @@
-import React from 'react';
+import React,  { useState, useEffect } from 'react';
 import ResultContainer from '../components/ResultContainer';
 
 function Render () {
-    const cities_response = JSON.parse(JSON.parse(localStorage.getItem("cities") || '{}'));
-    console.log(cities_response);
-    // const cityOne = Object.keys(cities_response)[0];
-    // const cityTwo = Object.keys(cities_response)[1];
-    // const cityThree = Object.keys(cities_response)[2];
-    // const cityFour = Object.keys(cities_response)[3];
-    // const cityFive = Object.keys(cities_response)[4];
-    // const cityOneBullets = cities_response[Object.keys(cities_response)[0]].map((c: string) => <li key={c} className='text-white'>{c}</li>);
-    // const cityTwoBullets = cities_response[Object.keys(cities_response)[1]].map((c: string) => <li key={c} className='text-white'>{c}</li>);
-    // const cityThreeBullets = cities_response[Object.keys(cities_response)[2]].map((c: string) => <li key={c} className='text-white'>{c}</li>);
-    // const cityFourBullets = cities_response[Object.keys(cities_response)[3]].map((c: string) => <li key={c} className='text-white'>{c}</li>);
-    // const cityFiveBullets = cities_response[Object.keys(cities_response)[4]].map((c: string) => <li key={c} className='text-white'>{c}</li>);
+    const [citiesResponse, setCitiesResponse] = useState<any>({});
+    const [loading, setLoading] = useState<any>(true);
+    const [error, setError] = useState<any>(null);
+
+    const surveyResponse = JSON.parse(localStorage.getItem("response") || '{}');
+
+    useEffect(() => {
+        async function handleSurveyResults(url: string, json: any) {
+            console.log(JSON.stringify(json, null, 3));
+            await fetch(url, {
+                method: 'POST',
+                headers: {
+                  'Content-Type': 'application/json;charset=UTF-8'
+                },
+                body: JSON.stringify(json)
+              })
+              .then(response => {
+                if (response.ok) {
+                  response.json().then(data => {
+                    console.log(JSON.parse(data));
+                    setCitiesResponse(JSON.parse(data));
+                    setLoading(false);
+                  })
+                } else {
+                  console.log('error from backend.');
+                }
+              })
+              .catch(error => {
+                setError(error);
+                setLoading(false);
+              });
+        };
+
+        handleSurveyResults(
+            'http://127.0.0.1:8000/post/',
+            surveyResponse
+        )
+    }, []);
+
+    if (loading) {
+        return(
+        <div className='flex flex-col justify-center items-center'>
+            <div>Loading...</div>
+        </div>
+        );
+    }
+
+    if (error) {
+        return(
+        <div className='flex flex-col justify-center items-center'>
+            <div>Error: {error.message}</div>
+        </div>
+        );
+    }
 
     return(
         <div className='space-y-3'>
-            <ResultContainer cityName={Object.keys(cities_response)[0]} bullets={cities_response[Object.keys(cities_response)[0]]} />
-            <ResultContainer cityName={Object.keys(cities_response)[1]} bullets={cities_response[Object.keys(cities_response)[1]]} />
-            <ResultContainer cityName={Object.keys(cities_response)[2]} bullets={cities_response[Object.keys(cities_response)[2]]} />
-            <ResultContainer cityName={Object.keys(cities_response)[3]} bullets={cities_response[Object.keys(cities_response)[3]]} />
-            <ResultContainer cityName={Object.keys(cities_response)[4]} bullets={cities_response[Object.keys(cities_response)[4]]} />
+            <ResultContainer cityName={Object.keys(citiesResponse)[0]} bullets={citiesResponse[Object.keys(citiesResponse)[0]]} />
+            <ResultContainer cityName={Object.keys(citiesResponse)[1]} bullets={citiesResponse[Object.keys(citiesResponse)[1]]} />
+            <ResultContainer cityName={Object.keys(citiesResponse)[2]} bullets={citiesResponse[Object.keys(citiesResponse)[2]]} />
+            <ResultContainer cityName={Object.keys(citiesResponse)[3]} bullets={citiesResponse[Object.keys(citiesResponse)[3]]} />
+            <ResultContainer cityName={Object.keys(citiesResponse)[4]} bullets={citiesResponse[Object.keys(citiesResponse)[4]]} />
         </div>
     );
 }

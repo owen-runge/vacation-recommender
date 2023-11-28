@@ -47,7 +47,7 @@ export const json = {
     "type": "checkbox",
     "name": "transport-choices",
     "title": "What modes of transport do you plan on utilizing?",
-    "description": "select all that apply",
+    "description": "select at least two",
     "isRequired": true,
     "requiredErrorText": "This question is required.",
     "choices": [
@@ -59,10 +59,9 @@ export const json = {
     "text": "Public Transport"
     }
     ],
-    "showNoneItem": true,
     "noneText": "No Preference",
     "maxSelectedChoices": 4,
-    "minSelectedChoices": 1
+    "minSelectedChoices": 2
 },
 {
     "type": "ranking",
@@ -111,7 +110,7 @@ export const json = {
     "type": "checkbox",
     "name": "activity-type-choices",
     "title": "Please choose your preferred activity type(s).",
-    "description": "select all that apply",
+    "description": "select at least two",
     "isRequired": true,
     "requiredErrorText": "This question is required.",
     "choices": [
@@ -163,14 +162,14 @@ export const json = {
     "noneText": "No Preference",
     "colCount": 2,
     "maxSelectedChoices": 11,
-    "minSelectedChoices": 1
+    "minSelectedChoices": 2
 },
 {
     "type": "ranking",
     "name": "activity-type-ranking",
-    "visibleIf": "{activity-type-choices} anyof ['Spas-Wellness', 'Sights-Landmarks', 'Nightlife', 'Fun-Games', 'Nature-Parks', 'Museums', 'Classes-Workshops', 'BoatTours-WaterSports', 'Casinos-Gambling', 'Water-AmusementParks', 'Zoos-Aquariums']",
+    "visibleIf": "{activity-type-choices} anyof ['spas_wellness', 'sights_landmarks', 'nightlife', 'fun_games', 'nature_parks', 'museums', 'classes_workshops', 'boat_tours_water_sports', 'casinos_gambling', 'water_amusement_parks', 'zoos_aquariums']",
     "title": "Please rank your preferred activity types from your answer(s) to the last question.",
-    "requiredIf": "{activity-type-choices} anyof ['Spas-Wellness', 'Sights-Landmarks', 'Nightlife', 'Fun-Games', 'Nature-Parks', 'Museums', 'Classes-Workshops', 'BoatTours-WaterSports', 'Item 11', 'Water-AmusementParks', 'Zoos-Aquariums']",
+    "requiredIf": "{activity-type-choices} anyof ['spas_wellness', 'sights_landmarks', 'nightlife', 'fun_games', 'nature_parks', 'museums', 'classes_workshops', 'boat_tours_water_sports', 'casinos_gambling', 'water_amusement_parks', 'zoos_aquariums']",
     "requiredErrorText": "This question is required.",
     "choicesFromQuestion": "activity-type-choices",
     "choices": [

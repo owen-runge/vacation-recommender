@@ -300,7 +300,7 @@ function ResultContainer (props:cityInfo) {
     if (cityName === 'Cincinnati, OH') {cityPhotoVarName = CincinnatiOH}
     if (cityName === 'Cleveland, OH') {cityPhotoVarName = ClevelandOH}
     if (cityName === 'Colorado Springs, CO') {cityPhotoVarName = ColoradoSpringsCO}
-    if (cityName === 'Columbia. SC') {cityPhotoVarName = ColumbiaSC}
+    if (cityName === 'Columbia, SC') {cityPhotoVarName = ColumbiaSC}
     if (cityName === 'Columbus, GA') {cityPhotoVarName = ColumbusGA}
     if (cityName === 'Columbus, OH') {cityPhotoVarName = ColumbusOH}
     if (cityName === 'Concord, NH') {cityPhotoVarName = ConcordNH}
