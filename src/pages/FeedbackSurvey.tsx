@@ -8,10 +8,11 @@ import { useCallback } from "react";
 
 interface surveyJson {
     json: {},
+    savedCompData: number[],
     onClose: any
 }
 
-function FeedbackSurvey({ json, onClose }:surveyJson) {
+function FeedbackSurvey({ json, savedCompData, onClose }:surveyJson) {
     console.log(json);
     const survey = new Model(json);
 
@@ -19,7 +20,8 @@ function FeedbackSurvey({ json, onClose }:surveyJson) {
     const surveyComplete = useCallback((sender: any) => {
         handleSurveyResults(
             'http://127.0.0.1:8000/post/',
-            sender.data
+            sender.data,
+            savedCompData
         )
         console.log(sender.data);
         onClose()
@@ -30,14 +32,14 @@ function FeedbackSurvey({ json, onClose }:surveyJson) {
     return (<Survey model={survey} />);
 }
 
-async function handleSurveyResults(url: string, json: any) {
+async function handleSurveyResults(url: string, json: any, savedCompData: number[]) {
     console.log(JSON.stringify(json, null, 3));
     await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json;charset=UTF-8'
         },
-        body: JSON.stringify(["feedback_survey_res", json])
+        body: JSON.stringify(["feedback_survey_res", json, savedCompData])
       })
       .then(response => {
         if (response.ok) {
