@@ -16,6 +16,7 @@ function Render ({ citiesResponse }: RenderProps) {
             <ResultContainer cityName={Object.keys(citiesResponse)[2]} bullets={citiesResponse[Object.keys(citiesResponse)[2]]} />
             <ResultContainer cityName={Object.keys(citiesResponse)[3]} bullets={citiesResponse[Object.keys(citiesResponse)[3]]} />
             <ResultContainer cityName={Object.keys(citiesResponse)[4]} bullets={citiesResponse[Object.keys(citiesResponse)[4]]} />
+            <div className='bg-dark h-12'></div>
         </div>
     );
 }
@@ -43,6 +44,7 @@ const Results = () => {
                 if (response.ok) {
                   response.json().then(data => {
                     setCitiesResponse(JSON.parse(data));
+                    console.log(citiesResponse);
                     setLoading(false);
                   })
                 } else {
@@ -80,6 +82,8 @@ const Results = () => {
 
     const cityNames = [Object.keys(citiesResponse)[0], Object.keys(citiesResponse)[1], Object.keys(citiesResponse)[2], Object.keys(citiesResponse)[3], Object.keys(citiesResponse)[4]];
     console.log(cityNames);
+    console.log(`saved data name = ${Object.keys(citiesResponse)[5]}, saved data = ${citiesResponse[Object.keys(citiesResponse)[5]]}`);
+    console.log(typeof citiesResponse[Object.keys(citiesResponse)[5]]);
 
     const feedbackSurveyJson = {
         "title": "Your Feedback Matters.",
@@ -181,7 +185,7 @@ const Results = () => {
                 <Render citiesResponse={citiesResponse} />
                 <FeedbackModal isVisible={showModal && !modalShownBefore} onClose={() => {setShowModal(false); setModalShownBefore(true);}} >
                     <div>
-                        <FeedbackSurvey json={feedbackSurveyJson} onClose={handleModalClose} />
+                        <FeedbackSurvey json={feedbackSurveyJson} savedCompData={citiesResponse[Object.keys(citiesResponse)[5]]} onClose={handleModalClose} />
                     </div>
                 </FeedbackModal>
             </div>
